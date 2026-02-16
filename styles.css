@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿/* Custom Styles & Animations */
+﻿ï»¿/* Custom Styles & Animations */
         :root {
             --primary: #ea580c;
             --secondary: #0f172a;
@@ -52,14 +51,106 @@
         }
         
         /* Timeline Line */
-        .timeline-line::before {
+        .timeline-road {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            width: 140px;
+            height: 100%;
+            overflow: visible;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .timeline-road-base {
+            fill: none;
+            stroke: #0f172a;
+            stroke-width: 28;
+            stroke-linecap: round;
+        }
+
+        .timeline-road-center {
+            fill: none;
+            stroke: #ffffff;
+            stroke-opacity: 0.98;
+            stroke-width: 3.2;
+            stroke-linecap: round;
+            stroke-dasharray: 10 11;
+        }
+
+        .timeline-rider {
+            position: absolute;
+            left: -26px;
+            top: 0;
+            width: 52px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .timeline-rider::after {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #ea580c, transparent);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 8px;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.35);
+            filter: blur(3px);
+        }
+
+        .timeline-side-banner {
+            width: 20px;
+            height: 12px;
+            border-radius: 3px;
+            top: 2px;
+            box-shadow: 0 6px 12px -8px rgba(15, 23, 42, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+        }
+
+        .timeline-side-banner::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 12px;
+            border-radius: 9999px;
+            background: #334155;
+        }
+
+        .timeline-side-banner::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: calc(100% + 10px);
+            transform: translateX(-50%);
+            width: 10px;
+            height: 3px;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.2);
+        }
+
+        .timeline-rider-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: rotate(180deg);
+            filter: drop-shadow(0 6px 8px rgba(15, 23, 42, 0.38));
+        }
+
+        @media (min-width: 768px) {
+            .timeline-rider {
+                left: calc(50% - 28px);
+            }
+            .timeline-road {
+                left: calc(50% - 70px);
+            }
         }
         
         /* Skill Bar Animation */
@@ -133,159 +224,77 @@
         .magnetic-btn {
             transition: transform 0.3s ease;
         }
-        
-=======
-﻿/* Custom Styles & Animations */
-        :root {
-            --primary: #ea580c;
-            --secondary: #0f172a;
+
+        /* About Section Responsive Sizing */
+        .about-visual {
+            max-width: 34rem;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            min-height: 320px;
+        }
+
+        .about-heading {
+            line-height: 1.15;
+        }
+
+        @media (max-width: 1024px) {
+            .about-visual {
+                max-width: 30rem;
+            }
+            .about-card {
+                min-height: 280px;
+                padding: 1.5rem;
+            }
+            .about-icon {
+                font-size: 4.5rem;
+            }
+            .about-deco-1 {
+                width: 56px;
+                height: 56px;
+            }
+            .about-deco-2 {
+                width: 84px;
+                height: 84px;
+            }
+            .about-copy p {
+                font-size: 0.98rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .about-section {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            .about-visual {
+                max-width: 22rem;
+            }
+            .about-glow {
+                inset: -0.5rem;
+            }
+            .about-card {
+                min-height: 230px;
+                padding: 1.1rem;
+            }
+            .about-icon {
+                font-size: 3.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .about-copy {
+                text-align: left;
+            }
         }
         
-        * {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            overflow-x: hidden;
-        }
-        
-        /* Mechanical Grid Background */
-        .bg-grid {
-            background-image: 
-                linear-gradient(rgba(234, 88, 12, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(234, 88, 12, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-        
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #0f172a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Glass Morphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Hover Lift Effect */
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -15px rgba(234, 88, 12, 0.3);
-        }
-        
-        /* Timeline Line */
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #ea580c, transparent);
-        }
-        
-        /* Skill Bar Animation */
-        .skill-fill {
-            width: 0;
-            transition: width 1.5s ease-out;
-        }
-        
-        /* Gear Animation */
-        .gear {
-            animation: rotate 10s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #ea580c;
-            border-radius: 5px;
-        }
-        
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0f172a;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease;
-        }
-        
-        .loader-gear {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(234, 88, 12, 0.3);
-            border-top: 4px solid #ea580c;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Section Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Magnetic Button Effect */
-        .magnetic-btn {
-            transition: transform 0.3s ease;
-        }
-        
->>>>>>> e863e3e (Add dedicated projects page with 3D tilt and animated popup)
         /* Patent Badge */
         .patent-badge {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-<<<<<<< HEAD
             font-size: 0.75rem;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-weight: 600;
-=======
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: 600;
->>>>>>> e863e3e (Add dedicated projects page with 3D tilt and animated popup)
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
@@ -402,10 +411,10 @@
             z-index: 1000;
             display: grid;
             place-items: center;
-            padding: 1rem;
+            padding: 1.25rem;
             pointer-events: none;
             opacity: 0;
-            transition: opacity 220ms ease;
+            transition: opacity 260ms ease;
         }
 
         .project-modal.is-open {
@@ -416,8 +425,8 @@
         .project-modal-backdrop {
             position: absolute;
             inset: 0;
-            background: rgba(2, 6, 23, 0.62);
-            backdrop-filter: blur(4px);
+            background: radial-gradient(circle at 30% 20%, rgba(234, 88, 12, 0.16), rgba(2, 6, 23, 0.75) 45%);
+            backdrop-filter: blur(6px);
         }
 
         .project-modal-shell {
@@ -426,10 +435,11 @@
             max-height: 90vh;
             overflow: auto;
             border-radius: 1rem;
-            background: white;
-            transform: translateY(12px) scale(0.96);
-            transition: transform 260ms ease;
-            box-shadow: 0 28px 60px -18px rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            transform: translateY(18px) scale(0.95);
+            transition: transform 280ms ease;
+            box-shadow: 0 34px 64px -20px rgba(15, 23, 42, 0.5);
         }
 
         .project-modal.is-open .project-modal-shell {
@@ -450,38 +460,37 @@
             color: white;
             cursor: pointer;
             z-index: 3;
+            transition: transform 180ms ease, background-color 180ms ease;
+        }
+
+        .project-modal-close:hover {
+            background: #ea580c;
+            transform: rotate(90deg);
         }
 
         #project-modal-content .project-tilt-card {
             transform: perspective(1200px) rotateX(-2deg) rotateY(0deg) !important;
             transform-style: preserve-3d;
             box-shadow: none;
-            border-radius: 0;
+            border-radius: 0.85rem;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            margin: 0.5rem 0.75rem 0.9rem;
         }
 
         #project-modal-content .project-content-layer {
             transform-style: preserve-3d;
+            display: block;
+            min-height: auto;
         }
 
-        #project-modal-content .project-content-layer > h3 {
-            transform: translateZ(56px);
-        }
-
-        #project-modal-content .project-content-layer > p {
-            transform: translateZ(30px);
-        }
-
-        #project-modal-content .project-content-layer > .flex.flex-wrap {
-            transform: translateZ(42px);
-        }
-
-        #project-modal-content .project-content-layer > .flex.items-center.gap-4 {
-            transform: translateZ(24px);
+        #project-modal-content .project-content-layer > * {
+            display: block;
         }
 
         #project-modal-content .project-content-layer > * {
             opacity: 0;
-            transition: transform 360ms ease, opacity 280ms ease;
+            transition: transform 380ms ease, opacity 300ms ease;
             transform: translateY(12px) translateZ(0);
         }
 
@@ -489,26 +498,41 @@
             opacity: 1;
         }
 
-        .project-modal.is-open #project-modal-content .project-content-layer > h3 {
-            transition-delay: 40ms;
+        .project-modal.is-open #project-modal-content .project-content-layer > *:nth-child(1) {
+            transition-delay: 30ms;
             transform: translateY(0) translateZ(56px);
         }
 
-        .project-modal.is-open #project-modal-content .project-content-layer > p {
-            transition-delay: 110ms;
+        .project-modal.is-open #project-modal-content .project-content-layer > *:nth-child(2) {
+            transition-delay: 90ms;
             transform: translateY(0) translateZ(30px);
         }
 
-        .project-modal.is-open #project-modal-content .project-content-layer > .flex.flex-wrap {
-            transition-delay: 170ms;
+        .project-modal.is-open #project-modal-content .project-content-layer > *:nth-child(3) {
+            transition-delay: 150ms;
+            transform: translateY(0) translateZ(32px);
+        }
+
+        .project-modal.is-open #project-modal-content .project-content-layer > *:nth-child(4) {
+            transition-delay: 210ms;
             transform: translateY(0) translateZ(42px);
         }
 
-        .project-modal.is-open #project-modal-content .project-content-layer > .flex.items-center.gap-4 {
-            transition-delay: 220ms;
+        .project-modal.is-open #project-modal-content .project-content-layer > *:nth-child(5) {
+            transition-delay: 260ms;
             transform: translateY(0) translateZ(24px);
         }
-<<<<<<< HEAD
+
+        #project-modal-content .project-content-layer > h3 {
+            font-size: clamp(1.6rem, 2.8vw, 2rem);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        #project-modal-content .project-content-layer > p {
+            line-height: 1.72;
+            font-size: 0.98rem;
+        }
         
         /* Typewriter Effect */
         .typewriter {
@@ -527,23 +551,3 @@
             from, to { border-color: transparent }
             50% { border-color: #ea580c }
         }
-=======
-        
-        /* Typewriter Effect */
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid #ea580c;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #ea580c }
-        }
->>>>>>> e863e3e (Add dedicated projects page with 3D tilt and animated popup)

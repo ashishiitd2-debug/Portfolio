@@ -187,30 +187,30 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white relative overflow-hidden">
+    <section id="about" class="about-section py-20 bg-white relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2 reveal">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-orange-100 to-blue-100 rounded-2xl transform rotate-3"></div>
-                        <div class="relative bg-slate-100 rounded-2xl p-8 aspect-square flex items-center justify-center overflow-hidden">
+                    <div class="about-visual relative">
+                        <div class="about-glow absolute -inset-4 bg-gradient-to-r from-orange-100 to-blue-100 rounded-2xl transform rotate-3"></div>
+                        <div class="about-card relative bg-slate-100 rounded-2xl p-8 aspect-square flex items-center justify-center overflow-hidden">
                             <div class="text-center">
-                                <i class="fas fa-cogs text-8xl text-slate-300 mb-4"></i>
+                                <i class="about-icon fas fa-cogs text-8xl text-slate-300 mb-4"></i>
                                 <div class="text-slate-400 font-display text-xl">Mechanical Systems</div>
                             </div>
                             <!-- Decorative Elements -->
-                            <div class="absolute top-4 right-4 w-20 h-20 border-4 border-orange-200 rounded-full opacity-50"></div>
-                            <div class="absolute bottom-4 left-4 w-32 h-32 border-4 border-blue-200 rounded-full opacity-50"></div>
+                            <div class="about-deco-1 absolute top-4 right-4 w-20 h-20 border-4 border-orange-200 rounded-full opacity-50"></div>
+                            <div class="about-deco-2 absolute bottom-4 left-4 w-32 h-32 border-4 border-blue-200 rounded-full opacity-50"></div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 reveal">
+                <div class="about-copy lg:w-1/2 reveal">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="w-12 h-0.5 bg-primary"></span>
                         <span class="text-primary font-semibold tracking-wider uppercase text-sm">About Me</span>
                     </div>
-                    <h2 class="text-4xl font-display font-bold text-secondary mb-6">
+                    <h2 class="about-heading text-3xl md:text-4xl font-display font-bold text-secondary mb-6">
                         Engineering Precision.<br>
                         <span class="text-primary">Innovation at Scale.</span>
                     </h2>
@@ -221,7 +221,7 @@
                         With expertise in precision mechanisms, structural analysis, and DFM (Design for Manufacturing), I bridge the gap between theoretical engineering and practical implementation. My work focuses on creating robust solutions for industrial and rural technology challenges.
                     </p>
                     
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-3 md:gap-4">
                         <div class="flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-lg text-orange-700">
                             <i class="fas fa-check-circle"></i>
                             <span class="font-medium">Structural Analysis</span>
@@ -253,6 +253,13 @@
             </div>
             
             <div class="max-w-4xl mx-auto relative timeline-line pl-8 md:pl-0 space-y-12">
+                <svg class="timeline-road" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="timeline-road-base" d="M60 0 C36 140,84 250,60 360 C36 470,84 580,60 690 C36 800,84 910,60 1000"></path>
+                    <path id="timeline-road-path" class="timeline-road-center" d="M60 0 C36 140,84 250,60 360 C36 470,84 580,60 690 C36 800,84 910,60 1000"></path>
+                </svg>
+                <div id="timeline-rider" class="timeline-rider" aria-hidden="true">
+                    <img src="assets/timeline-bike.svg" alt="Timeline bike" class="timeline-rider-img">
+                </div>
                 <!-- Aviotron -->
                 <div class="relative md:flex items-center justify-between group reveal">
                     <div class="hidden md:block w-5/12 text-right pr-8">
@@ -267,7 +274,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="timeline-side-banner absolute left-0 md:left-1/2 transform md:-translate-x-1/2 bg-primary shadow-lg z-10 group-hover:scale-110 transition-transform"></div>
                     <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-primary ml-6">
                         <h3 class="text-lg font-bold text-secondary">Product Development Executive</h3>
                         <p class="text-primary font-semibold">Aviotron Aerospace</p>
@@ -283,7 +290,7 @@
                         <p class="text-slate-500 text-sm">Aug 2025 â€“ Oct 2025</p>
                     </div>
                     <div class="hidden md:block w-5/12"></div>
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="timeline-side-banner absolute left-0 md:left-1/2 transform md:-translate-x-1/2 bg-secondary shadow-lg z-10 group-hover:scale-110 transition-transform"></div>
                     <div class="hidden md:block w-5/12 pl-8">
                         <div class="p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-secondary">
                             <h3 class="text-xl font-bold text-secondary mb-1">Scientist â€“ SC (Mechanical)</h3>
@@ -312,7 +319,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="timeline-side-banner absolute left-0 md:left-1/2 transform md:-translate-x-1/2 bg-accent shadow-lg z-10 group-hover:scale-110 transition-transform"></div>
                     <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-accent ml-6">
                         <h3 class="text-lg font-bold text-secondary">Project Assistant</h3>
                         <p class="text-accent font-semibold">IIT Delhi</p>
@@ -328,7 +335,7 @@
                         <p class="text-slate-500 text-sm">2017 â€“ 2023</p>
                     </div>
                     <div class="hidden md:block w-5/12"></div>
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="timeline-side-banner absolute left-0 md:left-1/2 transform md:-translate-x-1/2 bg-slate-400 shadow-lg z-10 group-hover:scale-110 transition-transform"></div>
                     <div class="hidden md:block w-5/12 pl-8">
                         <div class="p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-slate-400">
                             <h3 class="text-xl font-bold text-secondary mb-1">Earlier Roles</h3>
