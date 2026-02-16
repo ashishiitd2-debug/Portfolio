@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ashish Dahiya - Mechanical Systems Engineer specializing in Product Development, Industrial Machinery, Precision Mechanisms, and Aerospace Systems">
+    <meta name="keywords" content="Mechanical Engineer, Product Development, Industrial Machinery, Precision Mechanisms, ISRO, IIT Delhi, CAD, ANSYS">
+    <meta name="author" content="Ashish Dahiya">
+    <meta property="og:title" content="Ashish Dahiya - Mechanical Systems Engineer">
+    <meta property="og:description" content="End-to-end experience in designing, prototyping, and field-deploying complex mechanical systems">
+    <title>Ashish Dahiya | Mechanical Systems Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ea580c', // Copper/Orange
+                        secondary: '#0f172a', // Deep Navy
+                        accent: '#64748b', // Steel Gray
+                        light: '#f8fafc',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-slate-700 bg-slate-50 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="text-center">
+            <div class="loader-gear mb-4 mx-auto"></div>
+            <div class="text-white font-display text-xl tracking-widest">LOADING SYSTEMS</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-display font-bold text-secondary flex items-center gap-2 group">
+                    <i class="fas fa-cog text-primary gear group-hover:animate-none"></i>
+                    <span class="group-hover:text-primary transition-colors">AD</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors relative group">
+                        Experience
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="projects.html" target="_blank" rel="noopener noreferrer" class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors relative group">
+                        Projects
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors relative group">
+                        Skills
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="magnetic-btn px-6 py-2.5 bg-primary text-white rounded-full font-medium hover:bg-orange-700 transition-all hover:shadow-lg hover:shadow-orange-500/30">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-secondary text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-slate-100">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#about" class="text-slate-700 hover:text-primary font-medium">About</a>
+                <a href="#experience" class="text-slate-700 hover:text-primary font-medium">Experience</a>
+                <a href="projects.html" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-primary font-medium">Projects</a>
+                <a href="#skills" class="text-slate-700 hover:text-primary font-medium">Skills</a>
+                <a href="#contact" class="text-primary font-semibold">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-grid pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2fea580c\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="hero-tag inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md border border-orange-100 mb-8 opacity-0 transform translate-y-4">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-sm font-medium text-slate-600">Available for Opportunities</span>
+                </div>
+                
+                <h1 class="hero-title text-5xl md:text-7xl font-display font-bold text-secondary mb-6 leading-tight opacity-0 transform translate-y-4">
+                    Ashish <span class="gradient-text">Dahiya</span>
+                </h1>
+                
+                <div class="hero-subtitle text-xl md:text-2xl text-slate-600 font-light mb-4 opacity-0 transform translate-y-4">
+                    Mechanical Systems Engineer
+                </div>
+                
+                <div class="hero-desc text-lg text-slate-500 max-w-2xl mx-auto mb-10 opacity-0 transform translate-y-4">
+                    End-to-end expertise in designing, prototyping, and field-deploying complex mechanical systems with specialization in precision mechanisms, structural design, and industrial machinery.
+                </div>
+                
+                <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 transform translate-y-4">
+                    <a href="projects.html"
+                    target="_blank" rel="noopener noreferrer"
+                     class="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-orange-700 transition-all hover:shadow-xl hover:shadow-orange-500/30 flex items-center gap-2 group">
+                        View Projects
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="mailto:iitdmashish@gmail.com" class="px-8 py-4 bg-white text-secondary border-2 border-slate-200 rounded-full font-semibold hover:border-primary hover:text-primary transition-all flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-0 transform translate-y-4">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-secondary mb-1">7+</div>
+                        <div class="text-sm text-slate-500">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-secondary mb-1">5+</div>
+                        <div class="text-sm text-slate-500">Major Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-secondary mb-1">1</div>
+                        <div class="text-sm text-slate-500">Patent Granted</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-secondary mb-1">400+</div>
+                        <div class="text-sm text-slate-500">Students Mentored</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-slate-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-orange-100 to-blue-100 rounded-2xl transform rotate-3"></div>
+                        <div class="relative bg-slate-100 rounded-2xl p-8 aspect-square flex items-center justify-center overflow-hidden">
+                            <div class="text-center">
+                                <i class="fas fa-cogs text-8xl text-slate-300 mb-4"></i>
+                                <div class="text-slate-400 font-display text-xl">Mechanical Systems</div>
+                            </div>
+                            <!-- Decorative Elements -->
+                            <div class="absolute top-4 right-4 w-20 h-20 border-4 border-orange-200 rounded-full opacity-50"></div>
+                            <div class="absolute bottom-4 left-4 w-32 h-32 border-4 border-blue-200 rounded-full opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-12 h-0.5 bg-primary"></span>
+                        <span class="text-primary font-semibold tracking-wider uppercase text-sm">About Me</span>
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-secondary mb-6">
+                        Engineering Precision.<br>
+                        <span class="text-primary">Innovation at Scale.</span>
+                    </h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        I specialize in end-to-end mechanical system development, from conceptual design to field deployment. My experience spans aerospace-adjacent technologies at ISRO, experiential learning products at Aviotron Aerospace, and indigenous industrial machinery development at IIT Delhi.
+                    </p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        With expertise in precision mechanisms, structural analysis, and DFM (Design for Manufacturing), I bridge the gap between theoretical engineering and practical implementation. My work focuses on creating robust solutions for industrial and rural technology challenges.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-lg text-orange-700">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="font-medium">Structural Analysis</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg text-blue-700">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="font-medium">Precision Mechanisms</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-green-50 rounded-lg text-green-700">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="font-medium">Field Validation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="w-12 h-0.5 bg-primary"></span>
+                    <span class="text-primary font-semibold tracking-wider uppercase text-sm">Career Path</span>
+                    <span class="w-12 h-0.5 bg-primary"></span>
+                </div>
+                <h2 class="text-4xl font-display font-bold text-secondary">Professional Experience</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto relative timeline-line pl-8 md:pl-0 space-y-12">
+                <!-- Aviotron -->
+                <div class="relative md:flex items-center justify-between group reveal">
+                    <div class="hidden md:block w-5/12 text-right pr-8">
+                        <div class="inline-block p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-primary">
+                            <h3 class="text-xl font-bold text-secondary mb-1">Product Development Executive</h3>
+                            <p class="text-primary font-semibold mb-2">Aviotron Aerospace</p>
+                            <p class="text-slate-500 text-sm mb-3">Oct 2025 â€“ Present</p>
+                            <ul class="text-slate-600 text-sm space-y-1">
+                                <li>â€¢ Leading mechanical subsystem development</li>
+                                <li>â€¢ Structural enclosures & load-bearing frames</li>
+                                <li>â€¢ DFM coordination with vendors</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-primary ml-6">
+                        <h3 class="text-lg font-bold text-secondary">Product Development Executive</h3>
+                        <p class="text-primary font-semibold">Aviotron Aerospace</p>
+                        <p class="text-slate-500 text-sm">Oct 2025 â€“ Present</p>
+                    </div>
+                </div>
+
+                <!-- ISRO -->
+                <div class="relative md:flex items-center justify-between group reveal">
+                    <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-primary ml-6">
+                        <h3 class="text-lg font-bold text-secondary">Scientist â€“ SC (Mechanical)</h3>
+                        <p class="text-primary font-semibold">ISRO</p>
+                        <p class="text-slate-500 text-sm">Aug 2025 â€“ Oct 2025</p>
+                    </div>
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="hidden md:block w-5/12 pl-8">
+                        <div class="p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-secondary">
+                            <h3 class="text-xl font-bold text-secondary mb-1">Scientist â€“ SC (Mechanical)</h3>
+                            <p class="text-secondary font-semibold mb-2">Indian Space Research Organisation</p>
+                            <p class="text-slate-500 text-sm mb-3">Aug 2025 â€“ Oct 2025</p>
+                            <ul class="text-slate-600 text-sm space-y-1">
+                                <li>â€¢ Mechanical subsystem design & validation</li>
+                                <li>â€¢ Structural & thermal assessments</li>
+                                <li>â€¢ Space hardware documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IIT Delhi - Project Assistant -->
+                <div class="relative md:flex items-center justify-between group reveal">
+                    <div class="hidden md:block w-5/12 text-right pr-8">
+                        <div class="p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-accent">
+                            <h3 class="text-xl font-bold text-secondary mb-1">Project Assistant</h3>
+                            <p class="text-accent font-semibold mb-2">IIT Delhi</p>
+                            <p class="text-slate-500 text-sm mb-3">Jun 2023 â€“ Aug 2025</p>
+                            <ul class="text-slate-600 text-sm space-y-1">
+                                <li>â€¢ Led mechanical system design & field validation</li>
+                                <li>â€¢ Carding systems, looms, inspection robots</li>
+                                <li>â€¢ Patent filing & test reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-accent ml-6">
+                        <h3 class="text-lg font-bold text-secondary">Project Assistant</h3>
+                        <p class="text-accent font-semibold">IIT Delhi</p>
+                        <p class="text-slate-500 text-sm">Jun 2023 â€“ Aug 2025</p>
+                    </div>
+                </div>
+
+                <!-- Earlier Experience -->
+                <div class="relative md:flex items-center justify-between group reveal">
+                    <div class="md:hidden mb-4 bg-white p-4 rounded-xl shadow-md border-l-4 border-slate-400 ml-6">
+                        <h3 class="text-lg font-bold text-secondary">Project Assistant & Junior PA</h3>
+                        <p class="text-slate-600 font-semibold">IIT Delhi | MeitY</p>
+                        <p class="text-slate-500 text-sm">2017 â€“ 2023</p>
+                    </div>
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="hidden md:block w-5/12 pl-8">
+                        <div class="p-4 bg-white rounded-xl shadow-lg hover-lift border-l-4 border-slate-400">
+                            <h3 class="text-xl font-bold text-secondary mb-1">Earlier Roles</h3>
+                            <p class="text-slate-600 font-semibold mb-2">IIT Delhi | MeitY</p>
+                            <p class="text-slate-500 text-sm mb-3">2017 â€“ 2023</p>
+                            <ul class="text-slate-600 text-sm space-y-1">
+                                <li>â€¢ Robotic hand tactile sensing integration</li>
+                                <li>â€¢ Small-scale industrial system design</li>
+                                <li>â€¢ 400+ students mentored in design courses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section moved to projects.html -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="text-4xl font-display font-bold text-secondary mb-4">Featured Projects</h2>
+                <p class="text-slate-600 mb-8">Projects open on a dedicated page with the same React-Bits-style card effect.</p>
+                <a href="projects.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-orange-700 transition-all hover:shadow-xl hover:shadow-orange-500/30">
+                    Open Projects Page
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="w-12 h-0.5 bg-primary"></span>
+                    <span class="text-primary font-semibold tracking-wider uppercase text-sm">Expertise</span>
+                    <span class="w-12 h-0.5 bg-primary"></span>
+                </div>
+                <h2 class="text-4xl font-display font-bold">Technical Skills</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Technical Skills -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <i class="fas fa-cogs text-primary"></i>
+                        Mechanical Systems
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Precision Mechanisms & GD&T</span>
+                                <span class="text-primary">95%</span>
+                            </div>
+                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="skill-fill h-full bg-gradient-to-r from-primary to-orange-400 rounded-full" data-width="95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Power Transmission (Gears, Chains, Worm Drives)</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="skill-fill h-full bg-gradient-to-r from-primary to-orange-400 rounded-full" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Structural Design & Analysis (ANSYS)</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="skill-fill h-full bg-gradient-to-r from-primary to-orange-400 rounded-full" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">DFM & Field Testing</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="skill-fill h-full bg-gradient-to-r from-primary to-orange-400 rounded-full" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Software & Tools -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <i class="fas fa-laptop-code text-primary"></i>
+                        Design & Simulation
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 hover:border-primary transition-colors group">
+                            <div class="text-3xl mb-2 text-primary group-hover:scale-110 transition-transform"><i class="fas fa-cube"></i></div>
+                            <div class="font-semibold">Fusion 360</div>
+                            <div class="text-sm text-slate-400">Primary CAD</div>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 hover:border-primary transition-colors group">
+                            <div class="text-3xl mb-2 text-primary group-hover:scale-110 transition-transform"><i class="fas fa-drafting-compass"></i></div>
+                            <div class="font-semibold">SolidWorks</div>
+                            <div class="text-sm text-slate-400">Parametric Design</div>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 hover:border-primary transition-colors group">
+                            <div class="text-3xl mb-2 text-primary group-hover:scale-110 transition-transform"><i class="fas fa-shapes"></i></div>
+                            <div class="font-semibold">Creo</div>
+                            <div class="text-sm text-slate-400">3D Modeling</div>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 hover:border-primary transition-colors group">
+                            <div class="text-3xl mb-2 text-primary group-hover:scale-110 transition-transform"><i class="fas fa-wave-square"></i></div>
+                            <div class="font-semibold">ANSYS</div>
+                            <div class="text-sm text-slate-400">FEA & Modal</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-slate-800 rounded-xl border border-slate-700">
+                        <h4 class="font-bold mb-4 text-primary">Additional Expertise</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Vibration Mitigation</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Tolerance Analysis</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Failure Analysis</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Patent Documentation</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Vendor Coordination</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl font-display font-bold text-secondary">Education & IP</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Education -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg reveal">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-secondary text-lg">Education</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="border-l-2 border-primary pl-4">
+                                <h4 class="font-bold text-secondary">M.Tech, Mechanical Engineering</h4>
+                                <p class="text-slate-600">DCRUST Murthal</p>
+                                <p class="text-sm text-slate-400">2023</p>
+                            </div>
+                            <div class="border-l-2 border-slate-300 pl-4">
+                                <h4 class="font-bold text-secondary">B.Tech, Mechanical Engineering</h4>
+                                <p class="text-slate-600">DCRUST Murthal</p>
+                                <p class="text-sm text-slate-400">2016</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Intellectual Property -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg reveal">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-secondary text-lg">Intellectual Property</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-sm">Design Patent Granted</h4>
+                                    <p class="text-xs text-slate-600">Tulsi Mala Bead Making Device</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                <i class="fas fa-clock text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-sm">Design Registration (In Progress)</h4>
+                                    <p class="text-xs text-slate-600">Advanced Mango Assessment System</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg border border-purple-200">
+                                <i class="fas fa-file-alt text-purple-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-sm">Patent (In Progress)</h4>
+                                    <p class="text-xs text-slate-600">Lifting and Turning Mechanism for Smart Vending Cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-blue-50/50"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <span class="w-12 h-0.5 bg-primary"></span>
+                        <span class="text-primary font-semibold tracking-wider uppercase text-sm">Get in Touch</span>
+                        <span class="w-12 h-0.5 bg-primary"></span>
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-secondary mb-4">Let's Build Together</h2>
+                    <p class="text-slate-600">Open to opportunities in product development, mechanical systems, and industrial innovation.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-6 reveal">
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-secondary mb-1">Email</h3>
+                                <a href="mailto:iitdmashish@gmail.com" class="text-slate-600 hover:text-primary transition-colors">iitdmashish@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-secondary mb-1">Phone</h3>
+                                <a href="tel:+917290949901" class="text-slate-600 hover:text-primary transition-colors">+91-7290949901</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-secondary mb-1">LinkedIn</h3>
+                                <a href="#" class="text-slate-600 hover:text-primary transition-colors">View Profile</a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-slate-900 text-white rounded-xl">
+                            <h3 class="font-bold mb-2">Download Resume</h3>
+                            <p class="text-slate-300 text-sm mb-4">Get a PDF copy of my detailed resume.</p>
+                            <button onclick="downloadResume()" class="w-full py-3 bg-primary hover:bg-orange-600 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+                                <i class="fas fa-download"></i>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg reveal">
+                        <form id="contact-form" class="space-y-6" onsubmit="handleSubmit(event)">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                                <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-secondary hover:bg-slate-800 text-white rounded-lg font-semibold transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="font-display font-bold text-2xl mb-2">Ashish Dahiya</h3>
+                    <p class="text-slate-400">Mechanical Systems Engineer</p>
+                </div>
+                
+                <div class="flex gap-6">
+                    <a href="mailto:iitdmashish@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
+                <p>&copy; 2025 Ashish Dahiya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="script.js"></script>
+</body>
+</html>
